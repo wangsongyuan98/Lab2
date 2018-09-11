@@ -33,16 +33,25 @@ import edu.illinois.cs.cs125.lib.mazemaker.Maze;
              * You should be able to solve a 10 x 10 maze in (far fewer than) 1000 steps.
              * Feel free to adjust this number if you experiment with other mazes.
              */
-            for (int step = 0; step < 1000; step++) {
+//            for (int step = 0; step < 1000; step++) {
                 // Implement your maze solving algorithm here
-                while  (!maze.isFinished()) {
-                    maze.turnLeft();
-                    while (!maze.canMove()) {
-                        maze.turnRight();
+//                while  (!maze.isFinished()) {
+//                    maze.turnLeft();
+//                    while (!maze.canMove()) {
+//                        maze.turnRight();
+//                    }
+//                    maze.move();
+//                }
+//            }
+                while (!maze.isFinished()) {
+                    maze.move();
+                    while (!maze.canMove()){
+                        maze.turnLeft();
                     }
                     maze.move();
                 }
-            }
+                
+
 
             if (maze.isFinished()) {
                 System.out.println("You solved the maze!");
